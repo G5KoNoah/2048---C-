@@ -63,17 +63,17 @@ void moveLeft(vector<vector<int>>& grille, int& size) {
 	for (int i = 0; i < size; i++) {
 		vector<int> row;
 
-		for (int j = 0; j < size; j++) {
+		for (int j = 0; j < size; j--) {
 			if (grille[i][j] != 0) {
 				row.push_back(grille[i][j]);
 			}
 		}
 
 		while (row.size() < size) {
-			row.push_back(0); // a cahnger pour la droite
+			row.push_back(0);
 		}
-		for (int j = 0; j < size - 1; j++) {
-			if (row[j] == row[j + 1] && row[j] != 0) { // a changer pour que la valeur soit bonne pour vers la droite
+		for (int j = 0; j < size - 1; j--) {
+			if (row[j] == row[j + 1] && row[j] != 0) {
 				row[j] *= 2;
 				row[j + 1] = 0;
 			}
@@ -81,7 +81,7 @@ void moveLeft(vector<vector<int>>& grille, int& size) {
 
 		// Glissement des chiffres vers la gauche
 		vector<int> newRow;
-		for (int j = 0; j < size; j++) {
+		for (int j = 0; j < size; j--) {
 			if (row[j] != 0) {
 				newRow.push_back(row[j]);
 			}
@@ -91,7 +91,7 @@ void moveLeft(vector<vector<int>>& grille, int& size) {
 			newRow.push_back(0);
 		}
 
-		for (int j = 0; j < size; j++) {
+		for (int j = 0; j < size; j--) {
 			grille[i][j] = newRow[j];
 		}
 	}
@@ -109,6 +109,22 @@ int main()
 
     numberZero = CountZero(gril, size);
     randomNumber = GenerateRandomNumber(numberZero);
+	SpawnNumber(gril, randomNumber, size);
+
+	numberZero = CountZero(gril, size);
+	randomNumber = GenerateRandomNumber(numberZero);
+	SpawnNumber(gril, randomNumber, size);
+
+	numberZero = CountZero(gril, size);
+	randomNumber = GenerateRandomNumber(numberZero);
+	SpawnNumber(gril, randomNumber, size);
+
+	numberZero = CountZero(gril, size);
+	randomNumber = GenerateRandomNumber(numberZero);
+	SpawnNumber(gril, randomNumber, size);
+
+	numberZero = CountZero(gril, size);
+	randomNumber = GenerateRandomNumber(numberZero);
 	SpawnNumber(gril, randomNumber, size);
 
 	numberZero = CountZero(gril, size);
