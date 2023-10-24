@@ -128,6 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2048 C++.cpp" />
+    <ClCompile Include="Grid.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Grid.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
